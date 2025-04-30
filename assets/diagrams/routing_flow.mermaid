@@ -1,0 +1,13 @@
+flowchart LR
+    subgraph S[Routing Flow]
+        direction LR
+        A([Input / Prompt]) --> B[Router LLM 1]
+
+        B -->|Text Classification| C[LLM 2: Summarizer]
+        B -->|Intent: Code| D[LLM 3: Code Generator]
+        B -->|Intent: Math| E[LLM N: Math Solver]
+
+        C --> F([Final Output])
+        D --> F
+        E --> F
+    end

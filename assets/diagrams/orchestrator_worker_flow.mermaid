@@ -1,0 +1,15 @@
+flowchart LR
+    subgraph S[Orchestrator-Worker Flow]
+        direction LR
+        A([Input / Prompt]) --> B[Orchestrator Agent]
+
+        B --> C[LLM 1: Research Agent]
+        B --> D[LLM 2: QA Agent]
+        B --> E[LLM 3: Critique Agent]
+
+        C --> F[Synthesizer]
+        D --> F
+        E --> F
+
+        F --> G([Final Output])
+    end

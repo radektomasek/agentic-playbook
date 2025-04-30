@@ -1,0 +1,15 @@
+flowchart LR
+    subgraph S[Parallelization Flow]
+        direction LR
+        A([Input / Prompt]) --> B[Coordinator]
+
+        B --> C[LLM 1: Retriever]
+        B --> D[LLM 2: Sentiment Analyzer]
+        B --> E[LLM N: Fact Checker]
+
+        C --> F[Aggregator]
+        D --> F
+        E --> F
+
+        F --> G([Final Output])
+    end

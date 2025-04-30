@@ -1,0 +1,9 @@
+flowchart LR
+    subgraph S[Evaluator-Optimizer Flow]
+        direction LR
+        A([Input / Prompt]) --> B[LLM Generator]
+        B -->|Proposed Solution| C[LLM Evaluator]
+
+        C -->|Accepted| D([Final Output])
+        C -->|Rejected with Feedback| B
+    end

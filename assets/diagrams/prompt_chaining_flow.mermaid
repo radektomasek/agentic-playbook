@@ -1,0 +1,8 @@
+flowchart LR
+    subgraph S[Prompt Chaining Flow]
+        direction LR
+        A([Input / Prompt]) -->|Step 1| B[LLM 1]
+        B -->|Step 2| C[LLM 2]
+        C -->|Step N| D[LLM N]
+        D -->|Finalize| E([Final Output])
+    end
