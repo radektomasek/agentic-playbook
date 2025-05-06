@@ -1,0 +1,18 @@
+flowchart LR
+    subgraph S[MCP Server Flow]
+        direction LR
+        A([User Input / Request]) --> B[Router / Dispatcher]
+
+        B --> C1[Context Builder: Tool Spec]
+        B --> C2[Context Builder: Memory]
+        B --> C3[Context Builder: Persona / Role]
+        B --> C4[Context Builder: RAG Docs]
+
+        C1 --> D[Prompt Assembler]
+        C2 --> D
+        C3 --> D
+        C4 --> D
+
+        D --> E[LLM Completion]
+        E --> F([Response to Client])
+    end

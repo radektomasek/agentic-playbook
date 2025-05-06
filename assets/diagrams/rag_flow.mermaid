@@ -1,0 +1,9 @@
+flowchart TD
+    subgraph S[RAG Flow]
+        A([User Query]) --> B[Embed Query]
+        B --> C[Vector DB Search]
+        C --> D[Top-K Relevant Chunks]
+        D --> E[Augment Prompt with Context]
+        E --> F[LLM Generates Answer]
+        F --> G([Final Response])
+    end
